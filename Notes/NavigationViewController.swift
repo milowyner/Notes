@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class NavigationViewController: UITableViewController {
 
+    var noteArray = [Note]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,17 +26,22 @@ class NavigationViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return noteArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath)
-
-        // Configure the cell...
+        
+        cell.textLabel?.text! = noteArray[indexPath.row].preview ?? "New note"
 
         return cell
+    }
+    
+    // MARK: - Add new note
+    
+    @IBAction func createNoteButtonPressed(_ sender: UIBarButtonItem) {
+        
     }
     
 
