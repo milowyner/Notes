@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		05155BEB21961F110000D964 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05155BEA21961F110000D964 /* AppDelegate.swift */; };
-		05155BED21961F110000D964 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05155BEC21961F110000D964 /* ViewController.swift */; };
 		05155BF021961F110000D964 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05155BEE21961F110000D964 /* Main.storyboard */; };
-		05155BF321961F110000D964 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05155BF121961F110000D964 /* Notes.xcdatamodeld */; };
 		05155BF521961F130000D964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05155BF421961F130000D964 /* Assets.xcassets */; };
 		05155BF821961F130000D964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05155BF621961F130000D964 /* LaunchScreen.storyboard */; };
+		05155C00219620380000D964 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05155BFF219620380000D964 /* NavigationViewController.swift */; };
+		05155C062196239F0000D964 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05155C042196239F0000D964 /* Notes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05155BE721961F110000D964 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05155BEA21961F110000D964 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05155BEC21961F110000D964 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05155BEF21961F110000D964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		05155BF221961F110000D964 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		05155BF421961F130000D964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05155BF721961F130000D964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05155BF921961F130000D964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05155BFF219620380000D964 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		05155C052196239F0000D964 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				05155BEA21961F110000D964 /* AppDelegate.swift */,
-				05155BEC21961F110000D964 /* ViewController.swift */,
+				05155BFF219620380000D964 /* NavigationViewController.swift */,
 				05155BEE21961F110000D964 /* Main.storyboard */,
 				05155BF421961F130000D964 /* Assets.xcassets */,
 				05155BF621961F130000D964 /* LaunchScreen.storyboard */,
 				05155BF921961F130000D964 /* Info.plist */,
-				05155BF121961F110000D964 /* Notes.xcdatamodeld */,
+				05155C042196239F0000D964 /* Notes.xcdatamodeld */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -138,8 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05155BED21961F110000D964 /* ViewController.swift in Sources */,
-				05155BF321961F110000D964 /* Notes.xcdatamodeld in Sources */,
+				05155C00219620380000D964 /* NavigationViewController.swift in Sources */,
+				05155C062196239F0000D964 /* Notes.xcdatamodeld in Sources */,
 				05155BEB21961F110000D964 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NZ2YFKUT7;
 				INFOPLIST_FILE = Notes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.milowyner.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NZ2YFKUT7;
 				INFOPLIST_FILE = Notes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.milowyner.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -342,12 +344,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		05155BF121961F110000D964 /* Notes.xcdatamodeld */ = {
+		05155C042196239F0000D964 /* Notes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				05155BF221961F110000D964 /* Notes.xcdatamodel */,
+				05155C052196239F0000D964 /* Notes.xcdatamodel */,
 			);
-			currentVersion = 05155BF221961F110000D964 /* Notes.xcdatamodel */;
+			currentVersion = 05155C052196239F0000D964 /* Notes.xcdatamodel */;
 			path = Notes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
