@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,10 +40,45 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="nnC-kA-XTL" kind="show" identifier="goToNote" id="saN-OT-kDk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy5-b1-Q5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="654" y="52"/>
+        </scene>
+        <!--Note View Controller-->
+        <scene sceneID="bO6-vi-Adr">
+            <objects>
+                <viewController id="nnC-kA-XTL" customClass="NoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xuc-ow-UgT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VEG-Y4-nZJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VEG-Y4-nZJ" firstAttribute="leading" secondItem="zm7-YA-rOt" secondAttribute="leading" id="QXE-pc-qnB"/>
+                            <constraint firstItem="zm7-YA-rOt" firstAttribute="trailing" secondItem="VEG-Y4-nZJ" secondAttribute="trailing" id="S0G-IQ-Wme"/>
+                            <constraint firstItem="VEG-Y4-nZJ" firstAttribute="top" secondItem="zm7-YA-rOt" secondAttribute="top" id="Wci-vP-zeB"/>
+                            <constraint firstItem="zm7-YA-rOt" firstAttribute="bottom" secondItem="VEG-Y4-nZJ" secondAttribute="bottom" id="vri-TM-mek"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zm7-YA-rOt"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="VEG-Y4-nZJ" id="GsL-7d-WaK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKV-Am-Vj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="52"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U7t-si-1Rx">

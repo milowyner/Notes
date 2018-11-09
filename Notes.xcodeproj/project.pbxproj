@@ -13,6 +13,7 @@
 		05155BF821961F130000D964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05155BF621961F130000D964 /* LaunchScreen.storyboard */; };
 		05155C00219620380000D964 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05155BFF219620380000D964 /* NavigationViewController.swift */; };
 		05155C062196239F0000D964 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05155C042196239F0000D964 /* Notes.xcdatamodeld */; };
+		05155C0A2196281D0000D964 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05155C092196281D0000D964 /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		05155BF921961F130000D964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05155BFF219620380000D964 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		05155C052196239F0000D964 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
+		05155C092196281D0000D964 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				05155BEA21961F110000D964 /* AppDelegate.swift */,
 				05155BFF219620380000D964 /* NavigationViewController.swift */,
+				05155C092196281D0000D964 /* NoteViewController.swift */,
 				05155BEE21961F110000D964 /* Main.storyboard */,
 				05155BF421961F130000D964 /* Assets.xcassets */,
 				05155BF621961F130000D964 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05155C0A2196281D0000D964 /* NoteViewController.swift in Sources */,
 				05155C00219620380000D964 /* NavigationViewController.swift in Sources */,
 				05155C062196239F0000D964 /* Notes.xcdatamodeld in Sources */,
 				05155BEB21961F110000D964 /* AppDelegate.swift in Sources */,
