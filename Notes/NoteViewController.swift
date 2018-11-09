@@ -28,9 +28,7 @@ class NoteViewController: UIViewController {
     // MARK: - Back button pressed
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappear called")
         note?.text = textField.text
-        note?.preview = String(textField.text.prefix(40)) + "..."
         delegate?.noteFinished(note!)
     }
     

@@ -33,7 +33,7 @@ class NavigationViewController: UITableViewController, NoteDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath)
         
-        cell.textLabel?.text = noteArray[indexPath.row].preview ?? "New note"
+        cell.textLabel?.text = noteArray[indexPath.row].text
 
         return cell
     }
@@ -71,7 +71,6 @@ class NavigationViewController: UITableViewController, NoteDelegate {
     // MARK: - Note delegate method
     
     func noteFinished(_ note: Note) {
-        print("note finished called")
         if let indexPath = tableView.indexPathForSelectedRow {
             noteArray[indexPath.row] = note
         }
