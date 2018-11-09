@@ -16,12 +16,8 @@ class NavigationViewController: UITableViewController, NoteDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        loadNotes()
     }
 
     // MARK: - Table view data source
@@ -77,7 +73,25 @@ class NavigationViewController: UITableViewController, NoteDelegate {
         else {
             noteArray[noteArray.count - 1] = note
         }
-        
+        saveNotes()
+    }
+    
+    func saveNotes() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving notes, \(error)")
+        }
+        tableView.reloadData()
+    }
+    
+    func loadNotes() {
+        let request: NSFetchRequest<Note> = Note.fetchRequest()
+        do {
+            noteArray = try context.fetch(request)
+        } catch {
+            print("Error fetching notes, \(error)")
+        }
         tableView.reloadData()
     }
 
