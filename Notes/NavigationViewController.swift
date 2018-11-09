@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NavigationViewController: UITableViewController {
+class NavigationViewController: UITableViewController, NoteDelegate {
 
     var noteArray = [Note]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -29,12 +29,11 @@ class NavigationViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return noteArray.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath)
         
-        cell.textLabel?.text! = noteArray[indexPath.row].preview ?? "New note"
+        cell.textLabel?.text = noteArray[indexPath.row].preview ?? "New note"
 
         return cell
     }
@@ -42,7 +41,7 @@ class NavigationViewController: UITableViewController {
     // MARK: - Note was selected
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "goToNote", sender: self)
     }
     
     
@@ -63,7 +62,24 @@ class NavigationViewController: UITableViewController {
         
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.note = noteArray[indexPath.row]
+        } else {
+            destinationVC.note = noteArray[noteArray.count - 1]
         }
+        destinationVC.delegate = self
+    }
+    
+    // MARK: - Note delegate method
+    
+    func noteFinished(_ note: Note) {
+        print("note finished called")
+        if let indexPath = tableView.indexPathForSelectedRow {
+            noteArray[indexPath.row] = note
+        }
+        else {
+            noteArray[noteArray.count - 1] = note
+        }
+        
+        tableView.reloadData()
     }
 
 }
